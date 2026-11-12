@@ -31,12 +31,12 @@
  });
  document.addEventListener('pointerdown', () => document.documentElement.classList.remove('keyboard'));
 
- // Stile Pepe — slider: one photo at a time, always autoplay (client's choice: no pause button).
+ // Stile Pepe — slider: one photo at a time, autoplay + pause button (WCAG 2.2.2).
  // Dots jump to a photo and restart the timer; with reduced motion the photos swap without animation (CSS).
  document.querySelectorAll('.pepe-slider').forEach(slider => {
   const slides = [...slider.querySelectorAll('.pepe-slide')];
   if (slides.length < 2) return;
-  let current = 0, timer = 0;
+  let current = 0, timer = 0, paused = false;
   const nav = document.createElement('div');
   nav.className = 'slider-nav';
   // Decode every photo up front, so the first fade does not stutter on a 2500 px image.
@@ -52,7 +52,9 @@
   };
   const restart = () => {
    clearInterval(timer);
-   timer = setInterval(() => show((current + 1) % slides.length), 4000);
+   if (!paused) timer = setInterval(() => show((current + 1) % slides.length), 4000);
+   pause.setAttribute('aria-label', paused ? 'Avvia le foto' : 'Ferma le foto');
+   pause.classList.toggle('is-paused', paused);
   };
   const dots = slides.map((_, n) => {
    const b = document.createElement('button');
@@ -62,6 +64,11 @@
    nav.append(b);
    return b;
   });
+  const pause = document.createElement('button');
+  pause.type = 'button';
+  pause.className = 'slider-pause';
+  pause.addEventListener('click', () => { paused = !paused; restart(); });
+  nav.append(pause);
   slider.append(nav);
   slider.classList.add('is-ready');
   show(0);
