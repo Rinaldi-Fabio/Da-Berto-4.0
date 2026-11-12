@@ -46,7 +46,7 @@
   };
   const restart = () => {
    clearInterval(timer);
-   timer = setInterval(() => show((current + 1) % slides.length), 5000);
+   timer = setInterval(() => show((current + 1) % slides.length), 4000);
   };
   const dots = slides.map((_, n) => {
    const b = document.createElement('button');
