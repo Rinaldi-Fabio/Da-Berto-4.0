@@ -321,6 +321,25 @@ html{scrollbar-color:var(--rame) var(--nero)}
 @media(prefers-reduced-motion:no-preference){.dd-entra{animation:dd-entra .4s var(--ease-out)}@keyframes dd-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}}
 @media(max-width:760px){.carta.dd .dd-lista,.carta.dd .carta-chapter>section.is-aperto{margin-top:32px}.dd-riga{min-height:68px;padding:18px 4px}.carta.dd .menu-dishes>.dish{padding:18px 0}}
 
+/* Foto dei piatti: miniature tonde a sinistra del nome, come pepeingrani.it. Solo dove c'è una foto vera del piatto
+   (blocco Immagine con classe "dish-foto" dentro il piatto, dimensione Miniatura). */
+.dish-foto{margin:0}
+.dish-foto img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.dish:has(>.dish-foto){display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:20px;align-items:center}
+.dish:has(>.dish-foto)>.dish-foto{grid-row:1 / span 2}
+.dish:has(>.dish-foto)>:not(.dish-foto){grid-column:2}
+.menu-dishes>.dish-foto{margin-bottom:12px}
+.carta .menu-dishes:has(>.beer-prices):has(>.dish-foto){grid-template-rows:auto auto auto}
+@media(max-width:760px){
+ .dish-foto img{width:52px;height:52px}
+ .dish:has(>.dish-foto){grid-template-columns:52px minmax(0,1fr);column-gap:16px}
+ .carta .menu-dishes:has(>.beer-prices)>.dish-foto{margin-top:24px}
+}
+/* Birre della casa: l'etichetta affiancata al nome (stesso aspetto delle pizze). */
+.menu-dishes>.dish-foto{margin-bottom:0}
+.carta .menu-dishes:has(>.beer-prices)>.dish-foto+h4{margin-top:-64px;min-height:64px;padding-left:84px;display:flex;align-items:center}
+@media(max-width:760px){.carta .menu-dishes:has(>.beer-prices)>.dish-foto+h4{margin-top:-52px;min-height:52px;padding-left:68px}}
+
 /*# sourceURL=../wp-content/themes/daberto/assets/css/pepe.css */
 </style>
 <script id="wp-importmap" type="importmap">
@@ -425,7 +444,7 @@ html{scrollbar-color:var(--rame) var(--nero)}
 
 
 
-<p class="wp-block-paragraph"><a href="mailto:serena.urb@gmail.com">&#115;e&#114;&#101;na.&#117;rb&#064;gm&#097;&#105;l&#046;&#099;&#111;m</a></p>
+<p class="wp-block-paragraph"><a href="mailto:serena.urb@gmail.com">&#115;er&#101;&#110;a&#046;u&#114;b&#064;gm&#097;&#105;&#108;&#046;&#099;o&#109;</a></p>
 
 
 
@@ -541,7 +560,7 @@ Domenica: anche a pranzo</p>
 
 
 
-<p class="wp-block-paragraph"><a href="mailto:info@pizzeriadabertogradara.it">i&#110;fo&#064;p&#105;&#122;&#122;e&#114;&#105;ada&#098;e&#114;&#116;&#111;&#103;&#114;&#097;&#100;ar&#097;&#046;&#105;&#116;</a></p>
+<p class="wp-block-paragraph"><a href="mailto:info@pizzeriadabertogradara.it">&#105;nf&#111;&#064;pi&#122;zeriadab&#101;rt&#111;gra&#100;&#097;ra&#046;i&#116;</a></p>
 
 
 
