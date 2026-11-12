@@ -1,0 +1,347 @@
+/* Composizione del concept B; colori e tipografia sono in theme.json. */
+/* Page width: grows with the screen up to 1360px; gutters grow too, so wide screens never look empty. */
+:root{--ease-out:cubic-bezier(.23,1,.32,1);--page-max:1360px;--gutter:clamp(20px,4vw,72px);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:110px;-webkit-text-size-adjust:100%;scrollbar-color:var(--wp--preset--color--salvia) var(--wp--preset--color--notte)}
+body{margin:0}
+.wp-site-blocks{padding:0}
+.wp-site-blocks>*,.wp-block-post-content>*{margin-block:0}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty;max-width:65ch;margin:0}
+p+p{margin-top:16px}
+a{text-underline-offset:.2em}
+a,button,summary{touch-action:manipulation;scroll-margin-block:110px 95px}
+:focus-visible{outline:3px solid var(--wp--preset--color--crema);outline-offset:4px;box-shadow:0 0 0 4px var(--wp--preset--color--notte)}
+::selection{background:var(--wp--preset--color--ambra);color:var(--wp--preset--color--notte)}
+[hidden]{display:none!important}
+.wrap{width:min(var(--page-max),100% - 2 * var(--gutter));margin-inline:auto}
+.section{padding-block:76px}
+.small,.wp-element-caption{font-size:14px;line-height:1.5;color:var(--wp--preset--color--crema-tenue)}
+.wp-element-caption{margin:10px 0 0;text-align:left}
+.stack>*+*{margin-top:20px}
+.wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;min-height:50px;white-space:normal;transition:transform 160ms var(--ease-out)}
+.wp-block-button__link:active{transform:scale(.97)}
+.keyboard .wp-block-button__link:active{transform:none}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.text-link{display:flex;margin:0;min-height:44px;align-items:center;font-weight:600}
+p.text-link>a{display:inline-flex;align-items:center;min-height:44px}
+.text-link .wp-block-button__link,.footer-links .wp-block-button__link{padding:0;background:transparent;border:0;border-radius:0;color:var(--wp--preset--color--salvia);text-decoration:underline;font-weight:600;min-height:44px;transform:none}
+/* Intestazione e overlay conservano gestione focus/Escape del blocco Navigation. */
+.site-header{position:sticky;top:0;z-index:20;background:var(--wp--preset--color--notte);border-bottom:1px solid var(--wp--preset--color--linea)}
+.admin-bar .site-header{top:32px}
+.header-inner{min-height:110px;display:flex;align-items:center;gap:32px}
+.logo{background:#F4EEE3;border-radius:50%;padding:4px;flex:0 0 84px;width:84px}
+.logo a{display:block;min-height:0}
+.logo img{width:76px;height:78px;object-fit:contain}
+.main-nav{margin-left:auto}
+.main-nav a{display:flex;align-items:center;min-height:48px}
+.main-nav .current-menu-item>a{text-decoration:underline;text-decoration-thickness:2px}
+.wp-block-navigation__responsive-container.is-menu-open{background:var(--wp--preset--color--notte)!important;color:var(--wp--preset--color--crema)!important}
+.wp-block-navigation__responsive-container-close,.wp-block-navigation__responsive-container-open{width:48px;height:48px;align-items:center;justify-content:center;border:1px solid var(--wp--preset--color--linea);border-radius:3px}
+.wp-block-navigation__responsive-container-open svg{display:none}
+.wp-block-navigation__responsive-container-open::before{content:'';width:24px;height:20px;background:linear-gradient(currentColor,currentColor) 0 2px/24px 2px no-repeat,linear-gradient(currentColor,currentColor) 0 9px/24px 2px no-repeat,linear-gradient(currentColor,currentColor) 0 16px/24px 2px no-repeat}
+/* Apertura Veranda: nessun testo sulla fotografia. */
+.hero-v2{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center;padding-block:40px 48px}
+.intro>p{font-size:20px;margin-top:22px;max-width:520px}
+.intro .hero-hours{font-size:16px;color:var(--wp--preset--color--salvia);margin-top:20px}
+.intro .claim{font-size:16px;color:var(--wp--preset--color--crema-tenue);margin-top:8px}
+.hero-veranda img{aspect-ratio:4/5;max-height:640px;object-fit:cover;object-position:62% 40%;width:100%}
+.practical{display:grid;grid-template-columns:1.15fr 1fr .95fr;gap:30px;background:var(--wp--preset--color--notte-chiara);padding:26px 32px;font-size:16px;border-top:1px solid var(--wp--preset--color--ambra);margin-top:8px}
+.practical strong{display:block;font-size:18px;margin-bottom:6px}
+.practical a{display:inline-flex;align-items:center;min-height:44px}
+.practical p{line-height:1.5}
+.practical .small{font-size:14px;margin-top:8px}
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.place-layout{grid-template-columns:1.15fr .85fr}
+.place-layout img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.place-copy p{margin-top:24px}
+.story-band{background:var(--wp--preset--color--notte-chiara)}
+.family-layout{display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:80px;align-items:start}
+.family-layout img{width:100%;aspect-ratio:640/420;object-fit:cover}
+.family-people{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.family-people h3{font-size:21px;margin-bottom:10px}
+.family-people p{font-size:16px}
+.generations{margin-top:28px;display:flex;gap:26px}
+.generations .generation{flex:1;font-size:15px;margin:0}
+.generations strong{display:block}
+.generation::before{content:'';display:block;width:2px;height:21px;background:var(--wp--preset--color--ambra);transform:rotate(9deg);margin-bottom:10px}
+.generation-2::before{box-shadow:7px 0 var(--wp--preset--color--ambra)}
+.generation-3::before{box-shadow:7px 0 var(--wp--preset--color--ambra),14px 0 var(--wp--preset--color--ambra)}
+.flour-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}
+.flour-layout p{margin-top:24px}
+.flour-names{font-family:var(--wp--preset--font-family--titoli);font-size:26px;line-height:1.7;color:var(--wp--preset--color--salvia)}
+.flour-note{padding-top:24px;border-top:1px solid var(--wp--preset--color--linea);font-size:16px}
+.section-head{margin-bottom:32px}
+.section-head p{max-width:520px;margin-top:14px}
+.pizza-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.featured-pizza{background:var(--wp--preset--color--notte-chiara);border-top:1px solid var(--wp--preset--color--ambra);display:grid;grid-template-columns:.8fr 1fr;align-items:center;gap:26px;padding:24px}
+.featured-pizza>figure{align-self:stretch}
+.featured-pizza img{height:100%;width:100%;object-fit:cover;max-height:360px}
+.featured-pizza h3{margin-block:10px 16px}
+.featured-pizza p{font-size:16px}
+.featured-pizza .price{font-size:23px;margin-top:20px}
+.dish{padding:21px 0;border-bottom:1px solid var(--wp--preset--color--linea);break-inside:avoid}
+.dish:first-child{padding-top:0}
+.dish-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.dish h3{font:600 20px/1.3 var(--wp--preset--font-family--testo)}
+.dish p{font-size:16px;color:var(--wp--preset--color--crema-tenue);line-height:1.5;margin-top:7px}
+.dish-head p.price{margin:0;color:var(--wp--preset--color--crema)}
+.price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.beer-layout{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:clamp(48px,7vw,120px);align-items:center}
+.beer-layout img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.beers{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}
+.beers h3{margin-bottom:10px}
+.beers p{font-size:17px}
+.review{padding:30px 0;border-block:1px solid var(--wp--preset--color--linea);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.review p{font-family:var(--wp--preset--font-family--titoli);font-size:27px}
+.review .small{font-family:var(--wp--preset--font-family--testo);font-size:14px;margin-top:5px}
+.practical-notes{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:55px}
+.practical-notes p{margin-top:16px}
+.contact{background:var(--wp--preset--color--notte-chiara)}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact h2{margin-bottom:24px}
+.contact .phone{font:400 32px/1.3 var(--wp--preset--font-family--titoli);min-height:48px;margin-top:16px}
+.contact .phone>a{display:inline-flex;align-items:center;min-height:48px}
+.contact .actions .is-style-outline .wp-block-button__link{border-color:var(--wp--preset--color--ambra);color:var(--wp--preset--color--ambra)}
+.contact-info{border-left:1px solid var(--wp--preset--color--linea);padding-left:60px}
+.contact-info p{margin-top:14px}
+.footer{padding-block:36px}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:start}
+.footer p{font-size:14px;margin:0}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 24px;max-width:450px}
+.footer-links a{font-size:14px;display:inline-flex;align-items:center;min-height:44px;color:var(--wp--preset--color--crema);font-weight:400}
+.footer-bottom{border-top:1px solid var(--wp--preset--color--linea);margin-top:25px;padding-top:20px;color:var(--wp--preset--color--crema-tenue)}
+.footer-bottom p{font-size:13px}
+@media(min-width:761px){html body .mobile-bar{display:none}}/* core: body .is-layout-flex{display:flex} */
+/* Menu continuo: ingredienti distesi, nomi e prezzi sulla stessa riga. */
+.menu-hero{padding-block:50px 35px;display:grid;grid-template-columns:1fr 300px;gap:70px;align-items:center}
+.menu-hero h1{margin-bottom:20px}
+.menu-aside{background:var(--wp--preset--color--notte-chiara);padding:24px;font-size:16px}
+.menu-aside p+p{margin-top:10px}
+/* Menu "carta stampata": "Come la vuoi?" panel, four chapters, dishes in up to three columns,
+   dotted leader between name and price. Section titles h3, dish names h4 (the chapter is the h2). */
+.carta{padding-block:8px 80px}
+.carta-come{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 40px;padding:28px 32px;background:var(--wp--preset--color--notte-chiara);border-top:1px solid var(--wp--preset--color--ambra);font-size:16px}
+.carta-come p,.carta-come p+p{margin:0;max-width:none}
+.carta-come strong{display:block;font:400 21px/1.3 var(--wp--preset--font-family--titoli);margin-bottom:4px}
+.carta-index{display:flex;flex-wrap:wrap;gap:4px 32px;margin-top:40px;padding-block:8px;border-block:1px solid var(--wp--preset--color--linea);position:sticky;top:110px;z-index:5;background:var(--wp--preset--color--notte)}
+.admin-bar .carta-index{top:142px}
+.carta-index p{margin:0}
+.carta-chapter{padding-top:56px;scroll-margin-top:72px}
+.chapter-title{display:flex;align-items:center;gap:16px;font-size:clamp(34px,3vw,44px);padding-bottom:18px;margin-bottom:36px;border-bottom:1px solid var(--wp--preset--color--linea)}
+.chapter-title::before{content:'';flex:0 0 26px;height:.7em;background:linear-gradient(100deg,transparent calc(50% - 1.5px),var(--wp--preset--color--ambra) calc(50% - 1.5px) calc(50% + 1.5px),transparent calc(50% + 1.5px)) 0 0/8px 100% no-repeat,linear-gradient(100deg,transparent calc(50% - 1.5px),var(--wp--preset--color--ambra) calc(50% - 1.5px) calc(50% + 1.5px),transparent calc(50% + 1.5px)) 9px 0/8px 100% no-repeat,linear-gradient(100deg,transparent calc(50% - 1.5px),var(--wp--preset--color--ambra) calc(50% - 1.5px) calc(50% + 1.5px),transparent calc(50% + 1.5px)) 18px 0/8px 100% no-repeat}
+.menu-group{scroll-margin-top:72px;margin-bottom:48px}
+.carta .menu-group>.wp-block-heading,.carta .menu-info>.wp-block-heading{font-size:26px;color:var(--wp--preset--color--salvia);margin-bottom:20px}
+.menu-group>p{margin-bottom:22px;font-size:17px;color:var(--wp--preset--color--crema-tenue)}
+.carta .menu-dishes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 44px}
+.carta .menu-dishes>h4{grid-column:1/-1;margin-top:8px}
+.carta .dish{padding:0;border:0}
+.carta .dish-head{justify-content:flex-start;gap:8px}
+.carta .dish-head::after{content:'';order:1;flex:1 1 16px;min-width:12px;border-bottom:1px dotted var(--wp--preset--color--crema-tenue);transform:translateY(-.3em)}
+.carta .dish-head h4{order:0;font:600 19px/1.3 var(--wp--preset--font-family--titoli)}
+.carta .dish-head .price{order:2;font-size:15px}
+.carta .dish p:not(.price){font-size:15px;margin-top:4px}
+.carta .menu-group:has(.beer-prices),.carta .menu-info{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:0 44px;align-items:start}
+.carta .menu-group:has(.beer-prices)>.menu-dishes{grid-column:2;grid-row:1 / span 3}
+.carta .menu-info>:not(.wp-block-heading){grid-column:2}
+.carta .menu-info>.wp-block-heading{grid-row:1 / span 6}
+/* Flours inside the menu: same entries as the Home, smaller names, two columns. */
+.farine-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 40px;margin-block:20px 24px}
+.carta .farina h4{font-size:22px}
+.carta .farina p:not(.farina-meta){font-size:15px;margin-top:6px}
+.carta .menu-dishes:has(>.beer-prices){grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto;grid-auto-flow:column;gap:0 44px}
+.carta .menu-dishes:has(>.beer-prices)>h4{grid-column:auto;margin:0;font-size:22px}
+.carta .beer-prices{margin-top:12px}
+.carta-info{margin-top:56px;padding-top:40px;border-top:1px solid var(--wp--preset--color--linea)}
+.menu-info{background:var(--wp--preset--color--notte-chiara);padding:30px;margin-block:40px}
+.menu-info p+p{margin-top:15px}
+.beer-prices{margin-top:24px;font-size:16px}
+.beer-prices td,.beer-prices th{text-align:left;border:0;border-bottom:1px solid var(--wp--preset--color--linea);padding:14px 4px}
+.beer-prices td:last-child,.beer-prices th:last-child{text-align:right}
+.page-intro .lead{font-size:20px;margin-top:22px;max-width:650px}
+/* Privacy and cookie pages: readable text column + sticky summary of who is responsible. */
+.legal-layout{display:grid;grid-template-columns:minmax(0,720px) minmax(240px,320px);gap:clamp(48px,6vw,120px);justify-content:space-between;align-items:start}
+.legal{overflow-wrap:anywhere}
+.legal .wp-block-post-content{font-size:17px}
+.legal .wp-block-post-content p{max-width:none}
+.legal-aside{position:sticky;top:140px;padding:24px;background:var(--wp--preset--color--notte-chiara);border-top:1px solid var(--wp--preset--color--ambra);font-size:16px}
+.legal-aside p+p{margin-top:12px}
+/* Prenota: what to do on the left, practical info on the right. */
+.prenota-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(48px,6vw,120px);align-items:start}
+.prenota-layout .practical{grid-template-columns:1fr;gap:22px;margin-top:0;position:sticky;top:140px}
+.prenota-layout .practical>div+div{border-top:1px solid var(--wp--preset--color--linea);padding-top:18px}
+.prenota-main .work-with-us{margin-top:64px;padding-top:48px;border-top:1px solid var(--wp--preset--color--linea)}
+.legal>.wp-block-post-title{margin-bottom:32px}
+.legal .wp-block-post-content>*+*{margin-top:24px}
+.legal .wp-block-post-content h2{margin-top:48px;font-size:32px}
+.legal .wp-block-post-content h3{margin-top:32px;font-size:25px}
+.legal li+li{margin-top:12px}
+.legal .wp-block-table{overflow-x:auto;font-size:16px}
+.legal-draft{padding:20px;background:var(--wp--preset--color--notte-chiara);color:var(--wp--preset--color--ambra)}
+.wp-block-details summary{min-height:44px;cursor:pointer}
+/* La pseudo-tinta occupa solo la riga della foto: la didascalia resta fuori. */
+.wp-block-image.is-style-luce{position:relative;display:grid;overflow:hidden}
+.is-style-luce>img,.is-style-luce>a{grid-area:1/1;min-width:0}
+.is-style-luce>figcaption{grid-area:2/1}
+.is-style-luce::after{content:'';grid-area:1/1;position:relative;pointer-events:none;background:linear-gradient(to top,rgba(226,168,75,.55),rgba(226,168,75,.18) 45%,transparent 75%);mix-blend-mode:soft-light;opacity:.9;transform:none}
+@media(prefers-reduced-motion:no-preference){.is-style-luce.luce-enter::after{animation:light-up 1600ms var(--ease-out) both}@keyframes light-up{from{opacity:0;transform:translateY(35%)}to{opacity:.9;transform:none}}}
+@media(hover:hover) and (pointer:fine){.wp-block-button__link:hover{transform:translateY(-2px)}.wp-block-button__link:active{transform:scale(.97)}.text-link .wp-block-button__link:hover,.footer-links .wp-block-button__link:hover{transform:none}a:hover{text-decoration-thickness:2px}}
+@media(min-width:761px){.wp-block-navigation__responsive-container-open{display:none!important}.wp-block-navigation__responsive-container:not(.is-menu-open){display:block!important}}
+@media(max-width:1000px) and (min-width:761px){.header-inner{gap:20px}.carta-come{grid-template-columns:repeat(2,minmax(0,1fr))}.carta .menu-dishes{grid-template-columns:repeat(2,minmax(0,1fr))}.legal-layout,.prenota-layout{grid-template-columns:1fr}.legal-aside,.prenota-layout .practical{position:static}.main-nav{font-size:16px}.main-nav .wp-block-navigation__container{gap:18px}.hero-v2{gap:36px}.story-grid,.family-layout,.flour-layout,.pizza-layout{gap:40px}.featured-pizza{display:block}.featured-pizza img{height:220px;margin-bottom:20px}}
+@media(max-width:760px){
+ html{scroll-padding-top:94px;scroll-padding-bottom:100px}
+ body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+ h1{font-size:35px;line-height:1.16}h2{font-size:30px}h3{font-size:24px}
+ .section{padding-block:48px}
+ .header-inner{min-height:88px;gap:12px;flex-wrap:wrap}
+ .logo{width:62px;height:64px;flex-basis:62px}.logo img{width:54px;height:56px}
+ .header-inner .header-booking{display:none}
+ .main-nav{margin-left:auto}
+ .wp-block-navigation__responsive-container:not(.is-menu-open){display:block}
+ .wp-block-navigation__responsive-container-open{display:none}
+ .has-site-js .wp-block-navigation__responsive-container:not(.is-menu-open){display:none!important}
+ .has-site-js .wp-block-navigation__responsive-container-open{display:flex!important}
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container{width:100%;align-items:stretch;gap:8px}
+ .wp-block-navigation__responsive-container.is-menu-open a{min-height:48px;border-bottom:1px solid var(--wp--preset--color--linea)}
+ .hero-v2{grid-template-columns:1fr;gap:26px;padding-block:28px 32px}
+ .hero-veranda img{aspect-ratio:4/3}
+ .intro>p{font-size:18px;margin-top:18px}.intro .claim{font-size:15px}
+ .actions{display:flex;flex-direction:column;gap:10px;margin-top:22px;align-items:stretch}
+ .actions>.wp-block-button{width:100%}.actions .wp-block-button__link{width:100%}
+ .wp-block-button__link{min-height:50px;padding:12px 16px;font-size:16px}
+ .practical{grid-template-columns:1fr;gap:20px;padding:25px}.practical strong{font-size:17px}.practical .small{font-size:13px}
+ .practical>div+div{border-top:1px solid var(--wp--preset--color--linea);padding-top:18px}
+ .story-grid,.family-layout,.flour-layout,.pizza-layout,.contact-layout{grid-template-columns:1fr;gap:28px}
+ .family-people{grid-template-columns:1fr;gap:20px}.family-people h3{margin-bottom:5px}
+ .generations{gap:15px}.generations .generation{font-size:14px}
+ .flour-names{font-size:24px}.flour-layout p{margin-top:15px}.flour-note{font-size:15px}
+ .section-head{margin-bottom:25px}.section-head p{margin-top:18px}
+ .featured-pizza{grid-template-columns:110px 1fr;padding:20px;gap:20px}.featured-pizza img{max-height:310px}
+ .featured-pizza h3{font-size:26px}.featured-pizza p{font-size:15px}.featured-pizza .small{font-size:13px}
+ .beer-layout{grid-template-columns:120px 1fr;gap:24px;align-items:start}.beer-layout h2{font-size:28px}.beer-layout>div>p{font-size:16px}
+ .beers{grid-template-columns:1fr;gap:20px}.beers h3{font-size:23px}.beers p{font-size:15px}
+ .review{display:block;padding-block:25px}.review p{font-size:23px}.review .text-link{margin-top:12px}
+ .practical-notes{grid-template-columns:1fr;gap:32px;margin-top:35px}
+ .contact-info{border-left:0;border-top:1px solid var(--wp--preset--color--linea);padding:25px 0 0}.contact .phone{font-size:30px}
+ .footer-top{flex-direction:column;gap:20px}.footer-links{gap:4px 20px}.footer{padding-bottom:32px}
+ .mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:30;display:flex;flex-wrap:nowrap;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--wp--preset--color--notte);border-top:1px solid var(--wp--preset--color--linea)}
+ .mobile-bar>.wp-block-button{flex:1}.mobile-bar a{width:100%;min-height:52px}
+ .menu-hero{grid-template-columns:1fr;gap:24px;padding-block:30px}.menu-aside{padding:20px}
+ .carta-come{grid-template-columns:1fr;padding:22px}.carta-index{gap:0 24px;top:88px}.carta .menu-dishes{grid-template-columns:1fr}
+ .chapter-title{font-size:30px;margin-bottom:26px}.carta-chapter{padding-top:40px}
+ .legal-layout,.prenota-layout{grid-template-columns:1fr;gap:40px}.legal-aside,.prenota-layout .practical{position:static}
+ .prenota-main{display:contents}.prenota-main .page-intro{order:1}.prenota-layout .practical{order:2}
+ .prenota-main .work-with-us{order:3;margin-top:0;padding-top:32px}
+ .menu-group{margin-bottom:40px}.carta .menu-group>.wp-block-heading{font-size:24px}
+ .menu-info{padding:22px}.beer-prices{font-size:14px}.beer-prices td,.beer-prices th{padding:12px 2px}
+ .legal .wp-block-post-content h2{font-size:29px}
+}
+@media(max-width:782px){.admin-bar .site-header{top:46px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.is-style-luce::after{transform:none!important;opacity:.9!important}.wp-block-button__link:active,.wp-block-button__link:hover{transform:none!important}}
+/* Senza JS il menu resta nel flusso; col dialog aperto si evitano CTA fuori dal focus trap. */
+@media(max-width:760px){
+ html:not(.has-site-js) .main-nav{flex-basis:100%;margin:0 0 16px}
+ html:not(.has-site-js) .wp-block-navigation__responsive-container{position:static;inset:auto;width:auto}
+ html:not(.has-site-js) .wp-block-navigation__responsive-container-close{display:none}
+ html:not(.has-site-js) .wp-block-navigation__container{flex-direction:column;align-items:stretch;gap:0;width:100%}
+ html.has-modal-open .mobile-bar{display:none!important}
+ .js:not(.has-site-js) .mobile-bar{display:none}
+}
+html .skip-link.screen-reader-text:focus{background:var(--wp--preset--color--notte);color:var(--wp--preset--color--crema);border:1px solid var(--wp--preset--color--ambra)}
+@media(max-width:760px){.page-intro>.wp-block-buttons{flex-direction:column;align-items:stretch}.page-intro>.wp-block-buttons .wp-block-button,.page-intro>.wp-block-buttons .wp-block-button__link{width:100%}}
+
+/* Lavora con noi (pagina Prenota): breathing room between the short paragraphs. */
+.work-with-us{display:grid;gap:14px}
+.work-with-us>*{margin:0}
+
+/* Apertura a tutto schermo (pattern daberto/apertura-foto): Cover block, header over the photo on the home only. */
+.wp-block-cover.hero-cover{min-height:min(92svh,900px);padding:150px 24px 72px;text-align:center}
+.hero-cover .wp-block-cover__inner-container{max-width:860px;color:var(--wp--preset--color--crema)}
+.hero-cover h1{font-size:clamp(44px,6.2vw,84px);line-height:1.04;letter-spacing:-.02em;text-wrap:balance;margin:0}
+.hero-cover .hero-lead{font-size:clamp(18px,1.6vw,22px);max-width:560px;margin:22px auto 0}
+.hero-cover .actions{justify-content:center;margin-top:30px}
+.hero-cover .hero-hours{font-size:16px;color:var(--wp--preset--color--crema);margin-top:22px}
+.hero-cover p{text-shadow:0 1px 14px rgba(27,34,32,.55)}
+.hero-cover .wp-block-cover__image-background{object-position:50% 45%}
+/* Light rises over the photo, under the text. */
+.wp-block-cover.is-style-luce::after{position:absolute;inset:0;z-index:1;grid-area:auto}
+.wp-block-cover.is-style-luce .wp-block-cover__inner-container{z-index:2}
+.home .site-header{position:absolute;left:0;right:0;background:transparent;border-bottom-color:rgba(239,230,216,.18)}
+.home .site-header .wp-block-navigation-item__content{text-shadow:0 1px 12px rgba(27,34,32,.6)}
+@media(max-width:760px){
+ .wp-block-cover.hero-cover{min-height:88svh;padding:120px 20px 48px}
+ .hero-cover h1{font-size:44px;line-height:1.08}
+ .hero-cover .actions{align-items:stretch}
+}
+/* Beer tables and flour section: stacked title on tablet, everything in one column on phones. */
+@media(max-width:1000px){
+ .carta .menu-group:has(.beer-prices),.carta .menu-info{grid-template-columns:1fr}
+ .carta .menu-group:has(.beer-prices)>.menu-dishes,.carta .menu-info>*{grid-column:1;grid-row:auto}
+}
+@media(max-width:760px){
+ .carta .menu-dishes:has(>.beer-prices){display:block}
+ .farine-menu{grid-template-columns:1fr}
+ .carta .menu-dishes:has(>.beer-prices)>h4{margin-top:24px}
+}
+
+/* Le nove farine (Home, pattern daberto/nove-farine): intro with photo, then flours grouped by grain type. */
+.farine-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:center;margin-bottom:28px}
+.farine-copy .lead{font-size:20px;margin-top:20px}
+.farine-price{display:flex;justify-content:space-between;align-items:baseline;gap:16px;max-width:420px;margin-top:28px;padding-block:14px;border-block:1px solid var(--wp--preset--color--linea)}
+.farine-price p{margin:0}
+.farine-price .price{color:var(--wp--preset--color--ambra);font-size:20px}
+.farine-copy .small{margin-top:14px;max-width:420px}
+.farine .wp-block-image img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.farine-gruppo{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:40px;padding-block:36px;border-top:1px solid var(--wp--preset--color--linea)}
+.farine-gruppo>h3{color:var(--wp--preset--color--salvia);font-size:27px}
+.farine-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 44px}
+.farina h4{font:400 30px/1.15 var(--wp--preset--font-family--titoli)}
+.farina-meta{font-size:14px;color:var(--wp--preset--color--crema-tenue);margin-top:6px}
+.farina p:not(.farina-meta){margin-top:12px;max-width:60ch;font-size:16px}
+@media(max-width:760px){
+ .farine-intro{grid-template-columns:1fr;gap:28px}
+ .farine-gruppo{grid-template-columns:1fr;gap:20px;padding-block:28px}
+ .farine-lista{grid-template-columns:1fr;gap:26px}
+ .farina h4{font-size:26px}
+}
+
+/* 16/10: blocchi "menu-info" (Impasti e grani antichi, Menu e informazioni utili) in una colonna sotto i 1000 px. */
+@media(max-width:1000px){.carta .menu-info>.wp-block-heading,.carta .menu-info>:not(.wp-block-heading){grid-column:1;grid-row:auto}}
+
+/* 16/10: menu a tendina su telefono. Core vince su selettori deboli: html body. */
+@media(max-width:760px){
+ html body .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay){padding:20px var(--gutter) 32px}
+ html body .is-menu-open .wp-block-navigation__responsive-container-content{align-items:stretch;padding-top:76px}
+ html body .is-menu-open .wp-block-navigation__container{align-items:stretch;gap:0}
+ html body .is-menu-open .wp-block-navigation-item{width:100%}
+ html body .is-menu-open .wp-block-navigation-item__content{display:flex;align-items:center;width:100%;min-height:58px;font-size:21px}
+}
+
+/* 16/10: in Home l'intestazione segue lo scorrimento; trasparente sulla foto, scura appena si scorre (site.js). */
+.has-site-js .home .site-header{position:fixed;transition:background-color .25s var(--ease-out),border-color .25s var(--ease-out)}
+html.is-scrolled .home .site-header{background:var(--wp--preset--color--notte);border-bottom-color:var(--wp--preset--color--linea)}
+html.is-scrolled .home .site-header .wp-block-navigation-item__content,.home .site-header .is-menu-open .wp-block-navigation-item__content{text-shadow:none}
+
+/* 16/10: Instagram e Facebook nell'intestazione (indirizzi da Info locale); il testo resta come nome accessibile. */
+.header-inner .header-social{gap:2px;flex-wrap:nowrap}
+.header-inner .header-social .wp-block-button__link{display:grid;place-items:center;width:40px;height:40px;padding:0;font-size:0;background:none;border:0;color:var(--wp--preset--color--crema-tenue)}
+.header-inner .header-social .wp-block-button__link:hover{color:var(--wp--preset--color--crema)}
+.header-inner .header-social .wp-block-button__link::before{content:'';width:19px;height:19px;background:currentColor;-webkit-mask:var(--icona) center/contain no-repeat;mask:var(--icona) center/contain no-repeat}
+.social-instagram{--icona:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8'%3E%3Crect x='3' y='3' width='18' height='18' rx='5'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Ccircle cx='17.4' cy='6.6' r='1' fill='%23000' stroke='none'/%3E%3C/svg%3E")}
+.social-facebook{--icona:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z'/%3E%3C/svg%3E")}
+@media(max-width:760px){.header-inner .header-social{order:1;margin-left:auto}.header-inner .main-nav{order:2;margin-left:0}}
+
+/* 12/11: foto originali del cliente. Bertine in tre ritratti, Margherita e Rossini nel Menu, staff nella Storia. */
+.bertine-ritratti,.carta-foto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.bertine-ritratti>*,.carta-foto>*{margin:0}
+.family-layout .bertine-ritratti img{aspect-ratio:3/4;object-fit:cover;object-position:50% 35%}
+.bertine-ritratti .bertine-didascalia{grid-column:1/-1;margin-top:0;font-size:14px;line-height:1.5;color:var(--wp--preset--color--crema-tenue)}
+/* Ognuna sta a destra del centro nella foto originale (60-65%): ritaglio centrato sulla persona (Marina inclinata: tra viso e busto). */
+.family-layout .bertine-ritratti img[src*="marina"]{object-position:63% 35%}
+.family-layout .bertine-ritratti img[src*="serena"]{object-position:76% 35%}
+.family-layout .bertine-ritratti img[src*="chiara"]{object-position:80% 35%}
+.carta-foto{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-bottom:40px}
+.carta-foto img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.photo-wide img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:50% 45%}
+@media(max-width:760px){.carta-foto{gap:12px;margin-bottom:28px}.carta-foto img,.photo-wide img{aspect-ratio:4/3}}
