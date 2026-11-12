@@ -39,9 +39,15 @@
   let current = 0, timer = 0;
   const nav = document.createElement('div');
   nav.className = 'slider-nav';
+  // Decode every photo up front, so the first fade does not stutter on a 2500 px image.
+  slides.forEach(s => { const img = s.querySelector('img'); if (img) { img.loading = 'eager'; img.decode?.().catch(() => {}); } });
   const show = n => {
+   slides.forEach((s, k) => {
+    s.classList.toggle('is-prev', k === current && k !== n); // stays opaque under the incoming photo
+    s.classList.toggle('is-active', k === n);
+    s.inert = k !== n;
+   });
    current = n;
-   slides.forEach((s, k) => { s.classList.toggle('is-active', k === n); s.inert = k !== n; });
    dots.forEach((d, k) => d.setAttribute('aria-current', k === n ? 'true' : 'false'));
   };
   const restart = () => {
